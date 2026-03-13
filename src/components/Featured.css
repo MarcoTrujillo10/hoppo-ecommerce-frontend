@@ -1,0 +1,133 @@
+.feat { padding: 48px 0 8px; }
+.feat__title { margin: 0 0 16px; font-size: 28px; font-weight: 800; }
+.feat__grid {
+  display: grid; gap: 16px; grid-template-columns: repeat(1,1fr);
+}
+@media (min-width: 640px){ .feat__grid{ grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 960px){ .feat__grid{ grid-template-columns: repeat(4,1fr); } }
+
+.card { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  padding: 8px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.card__link:hover {
+  background-color: #f9fafb;
+}
+
+.card__img {
+  width: 100%; 
+  aspect-ratio: 16/9; 
+  border-radius: 8px; 
+  background-size: cover; 
+  background-position: center;
+  transition: transform 0.2s;
+}
+
+.card:hover .card__img { 
+  transform: scale(1.02);
+}
+
+.card__body { 
+  padding: 4px 0; 
+}
+
+.card__h { 
+  margin: 0 0 4px; 
+  font-weight: 800; 
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.card__link:hover .card__h {
+  color: #13a4ec;
+}
+
+.card__p { 
+  margin: 0; 
+  color: #666; 
+  font-size: 14px; 
+}
+
+.card__price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 8px;
+}
+
+.card__stock {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.card__stock.out {
+  color: #dc3545;
+}
+
+
+.loading .card__img {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.loading-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+  height: 200px;
+}
+
+.loading-text {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.loading-text.short {
+  width: 60%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+}
+
+.empty-state p {
+  margin: 10px 0;
+}
